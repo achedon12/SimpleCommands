@@ -16,8 +16,34 @@
 
 ### Base configuration
 
-
-    In progress
+    # Setup here the prefix for the plugin
+    Prefix: "§5[§bSimpleCommands§5] §r"
+    
+    # Setup here the message when player don't have permission to execute this command
+    ErrorPermission: " You don't this permission to use this command"
+    
+    # Setup here message on feed command
+    Feed:
+        confirm: " Your food has been regenerated"
+        error: " You canno't actually regenerate your food"
+    # Setup here message on heal command
+    Heal:
+        confirm: " Your life has been regenerated"
+        error: " You canno't actually regenerate your life"
+    
+    # Setup here message for furnace command
+    Furnace:
+        errorItemInHand: " This item can not be furnace"
+        noblockInHand: " You must have any items in your hand"
+        confirmFurnace: " You have furnace {count} {item}"
+    
+    Clear:
+        enderChest:
+            confirm: " You have clear {player} enderchest"
+            send: " {player} has clear your enderchest"
+        inv:
+            confirm: " You have clear {player} inventory"
+            send: " {player} has clear your inventory"
 
 -----------------
 
