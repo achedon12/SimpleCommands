@@ -10,12 +10,10 @@ use achedon\simpleCommands\commands\healCMD;
 use muqsit\invmenu\InvMenuHandler;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
-use pocketmine\plugin\Plugin;
 use pocketmine\plugin\PluginBase;
-use pocketmine\plugin\PluginOwned;
 use pocketmine\utils\Config;
 
-class commands extends PluginBase implements PluginOwned{
+class commands extends PluginBase {
     /** @var commands $instance */
     private static $instance;
 
@@ -46,11 +44,6 @@ class commands extends PluginBase implements PluginOwned{
         if(!InvMenuHandler::isRegistered()){
             InvMenuHandler::register($this);
         }
-
-        if(!$this->getServer()->getPluginManager()->getPlugin("InvMenu")){
-            $this->getLogger()->alert("You don't §cInvMenu§r on your server\nPlease instal them");
-            $this->getServer()->getPluginManager()->disablePlugins();
-        }
     }
 
     protected function onDisable(): void{
@@ -61,12 +54,7 @@ class commands extends PluginBase implements PluginOwned{
         return new Config(self::$instance->getDataFolder() . "config.yml", Config::YAML);
     }
 
-    /** @return commands*/
     public static function getInstance(): commands{
         return self::$instance;
-    }
-
-    public function getOwningPlugin(): Plugin{
-        return self::getInstance();
     }
 }

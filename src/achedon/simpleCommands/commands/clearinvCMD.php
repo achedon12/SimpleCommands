@@ -2,7 +2,7 @@
 
 namespace achedon\simpleCommands\commands;
 
-use achedon\simpleCommands\commands;
+
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\lang\Translatable;

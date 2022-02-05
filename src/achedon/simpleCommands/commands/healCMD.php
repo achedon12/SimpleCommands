@@ -22,7 +22,7 @@ class healCMD extends Command{
         $errorheal = $cfg->getNested("Heal.error");
         $confirmHeal = $cfg->getNested("Heal.confirm");
 
-        if($sender instanceof Player){
+        if(!$sender instanceof Player){
             $sender->sendMessage("please execute this command in game");
         }else{
             if(!$sender->hasPermission("use.heal") && !Server::getInstance()->isOp($sender->getName())){
