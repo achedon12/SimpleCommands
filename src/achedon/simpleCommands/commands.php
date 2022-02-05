@@ -47,7 +47,7 @@ class commands extends PluginBase implements PluginOwned{
             InvMenuHandler::register($this);
         }
 
-        if(!$this->$this->getServer()->getPluginManager()->getPlugin("InvMenu")){
+        if(!$this->getServer()->getPluginManager()->getPlugin("InvMenu")){
             $this->getLogger()->alert("You don't §cInvMenu§r on your server\nPlease instal them");
             $this->getServer()->getPluginManager()->disablePlugins();
         }
