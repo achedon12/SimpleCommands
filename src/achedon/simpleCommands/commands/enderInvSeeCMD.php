@@ -2,7 +2,6 @@
 
 namespace achedon\simpleCommands\commands;
 
-use achedon\simpleCommands\api\simpleCommandsManager;
 use achedon\simpleCommands\commands;
 use muqsit\invmenu\InvMenu;
 use pocketmine\command\Command;
