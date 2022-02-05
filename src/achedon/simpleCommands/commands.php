@@ -11,6 +11,7 @@ use achedon\simpleCommands\commands\feedCMD;
 use achedon\simpleCommands\commands\furnaceCMD;
 use achedon\simpleCommands\commands\healCMD;
 use achedon\simpleCommands\commands\invseeCMD;
+use muqsit\invmenu\InvMenuHandler;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 use pocketmine\plugin\Plugin;
@@ -50,6 +51,10 @@ class commands extends PluginBase implements PluginOwned{
         ];
         foreach($perms as $perm){
             PermissionManager::getInstance()->addPermission(new Permission($perm));
+        }
+
+        if(!InvMenuHandler::isRegistered()){
+            InvMenuHandler::register($this);
         }
     }
 

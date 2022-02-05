@@ -2,6 +2,7 @@
 
 namespace achedon\simpleCommands\commands;
 
+use achedon\simpleCommands\api\simpleCommandsManager;
 use achedon\simpleCommands\commands;
 use muqsit\invmenu\InvMenu;
 use pocketmine\command\Command;
@@ -34,20 +35,13 @@ class enderInvSeeCMD extends Command{
                     if(!$joueur instanceof Player){
                         $sender->sendMessage($args[0]." is not a player");
                     }else{
-                        self::getPlayerEnderChestInventory($sender,$joueur);
+                       $manager = new simpleCommandsManager($sender);
+                       $manager->getPlayerEnderChestInventory($joueur)->send($sender);
                     }
                 }
             }
         }
     }
 
-    private function getPlayerEnderChestInventory(Player $admin, Player $target){
-        $menu = InvMenu::create(InvMenu::TYPE_DOUBLE_CHEST);
-        foreach ($target->getEnderInventory()->getContents() as $value => $item) {
-            $menu->getInventory()->setItem($value, $item);
-        }
-        $menu->setName("§1- §8Enderchest de §9{$target->getName()} §1-");
-        $menu->send($admin);
-        return $menu;
-    }
+
 }

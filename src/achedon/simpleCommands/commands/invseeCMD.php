@@ -2,6 +2,7 @@
 
 namespace achedon\simpleCommands\commands;
 
+use achedon\simpleCommands\api\simpleCommandsManager;
 use achedon\simpleCommands\commands;
 use muqsit\invmenu\InvMenu;
 use pocketmine\command\Command;
@@ -34,20 +35,13 @@ class invseeCMD extends Command{
                     if(!$joueur instanceof Player){
                         $sender->sendMessage($args[0]." is not a player");
                     }else{
-                        self::getPlayerInventory($sender,$joueur);
+                        $manager = new simpleCommandsManager($sender);
+                        $manager->getPlayerInventory($joueur)->send($sender);
                     }
                 }
             }
         }
     }
 
-    private function getPlayerInventory(Player $admin, Player $target){
-        $menu = InvMenu::create(InvMenu::TYPE_CHEST);
-        foreach ($target->getInventory()->getContents() as $value => $item) {
-            $menu->getInventory()->setItem($value, $item);
-        }
-        $menu->setName("§1- §8Inventory de §9{$target->getName()} §1-");
-        $menu->send($admin);
-        return $menu;
-    }
+    //TODO mettre le synchro
 }
