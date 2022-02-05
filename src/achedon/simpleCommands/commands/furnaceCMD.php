@@ -43,7 +43,9 @@ class furnaceCMD extends Command{
         $errorMessage = $cfg->getNested("Furnace.noblockInHand");
         $errorItem = $cfg->getNested("Furnace.errorItemInHand");
 
-        if($sender instanceof Player){
+        if(!$sender instanceof Player){
+            $sender->sendMessage("please execute this command in game");
+        }else{
             if(!$sender->hasPermission("use.furnace") && !Server::getInstance()->isOp($sender->getName())){
                 $sender->sendMessage($prefix.$errorPermission);
             }else{

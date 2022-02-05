@@ -33,3 +33,11 @@ Furnace:
   errorItemInHand: " This item can not be furnace"
   noblockInHand: " You must have any items in your hand"
   confirmFurnace: " You have furnace {count} {item}"
+
+Clear:
+  enderChest:
+    confirm: " You have clear {player} enderchest"
+    send: " {player} has clear your enderchest"
+  inv:
+    confirm: " You have clear {player} inventory"
+    send: " {player} has clear your inventory"

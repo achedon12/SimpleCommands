@@ -8,6 +8,12 @@
 
 -----------------
 
+## Requires
+
+[InvMenu plugin](https://github.com/Muqsit/InvMenu)
+
+-----------------
+
 ## Base configuration
 
 

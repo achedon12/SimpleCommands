@@ -22,7 +22,9 @@ class feedCMD extends Command{
         $errorFeed = $cfg->getNested("Feed.error");
         $confirmFeed = $cfg->getNested("Feed.confirm");
 
-       if($sender instanceof Player){
+       if($sender instanceof Player) {
+           $sender->sendMessage("please execute this command in game");
+       }else{
            if(!$sender->hasPermission("use.feed") && !Server::getInstance()->isOp($sender->getName())){
                $sender->sendMessage($prefix.$errorPermission);
            }else{
