@@ -33,11 +33,7 @@ class commands extends PluginBase implements PluginOwned{
             new healCMD("heal","heal","/heal"),
             new furnaceCMD("furnace","furnace ","/furnace"),
             new clearEnderChestCMD("clearec","clear ec ","/clearec",["ecclear"]),
-            new clearinvCMD("clearinv","clear inv ","/clearinv",["invclear"]),
-            new ecCMD("ec","ec","/ec"),
-            new craftCMD("craft","craft","/craft"),
-            new invseeCMD("invsee","see inventory","/invsee",["seeinv"]),
-            new enderInvSeeCMD("enderinvsee","see enderchest inventory","/enderinvsee",["ecsee","seeec"]),
+            new clearinvCMD("clearinv","clear inv ","/clearinv",["invclear"])
         ]);
 
         $perms = [
@@ -45,8 +41,6 @@ class commands extends PluginBase implements PluginOwned{
             "use.heal",
             "use.furnace",
             "use.clearinv",
-            "use.ec",
-            "use.craft",
             "use.invsee"
         ];
         foreach($perms as $perm){

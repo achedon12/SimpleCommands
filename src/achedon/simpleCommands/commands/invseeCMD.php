@@ -35,13 +35,22 @@ class invseeCMD extends Command{
                     if(!$joueur instanceof Player){
                         $sender->sendMessage($args[0]." is not a player");
                     }else{
-                        $manager = new simpleCommandsManager($sender);
-                        $manager->getPlayerInventory($joueur)->send($sender);
+                        self::SeePlayerInventory($joueur)->send($sender);
                     }
                 }
             }
         }
     }
 
-    //TODO mettre le synchro
+    private function SeePlayerInventory(Player $target): InvMenu{
+
+        $menu = InvMenu::create(InvMenu::TYPE_CHEST);
+        foreach ($target->getInventory()->getContents() as $value => $item) {
+            $menu->getInventory()->setItem($value, $item);
+        }
+        $menu->setName("§1- §9{$target->getName()}'s §8inventory §1-");
+        $menu->setListener(InvMenu::readonly());
+        return $menu;
+    }
+
 }

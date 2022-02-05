@@ -35,13 +35,22 @@ class enderInvSeeCMD extends Command{
                     if(!$joueur instanceof Player){
                         $sender->sendMessage($args[0]." is not a player");
                     }else{
-                       $manager = new simpleCommandsManager($sender);
-                       $manager->getPlayerEnderChestInventory($joueur)->send($sender);
+                       self::SeePlayerEnderchestInventory($joueur)->send($sender);
                     }
                 }
             }
         }
     }
 
+    private function SeePlayerEnderchestInventory(Player $target): InvMenu{
+
+        $menu = InvMenu::create(InvMenu::TYPE_CHEST);
+        foreach ($target->getEnderInventory()->getContents() as $value => $item) {
+            $menu->getInventory()->setItem($value, $item);
+        }
+        $menu->setName("§1- §9{$target->getName()}'s §8enderChest §1-");
+        $menu->setListener(InvMenu::readonly());
+        return $menu;
+    }
 
 }
