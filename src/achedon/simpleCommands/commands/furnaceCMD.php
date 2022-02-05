@@ -20,6 +20,16 @@ class furnaceCMD extends Command{
         73 => '331:0',
         16 => '263:0',
         129 => '388:0',
+        12 => '20:0',
+        4 => '1:0',
+        392 => '393:0',
+        395 => '396:0',
+        19 => '19:0',
+        319 => '320:0',
+        363 => '364:0',
+        423 => '424:0',
+        411 => '412:0',
+        349 => '350:0',
     ];
 
     public function __construct(string $name, Translatable|string $description = "", Translatable|string|null $usageMessage = null, array $aliases = []){
@@ -34,7 +44,7 @@ class furnaceCMD extends Command{
         $errorItem = $cfg->getNested("Furnace.errorItemInHand");
 
         if($sender instanceof Player){
-            if(!$sender->hasPermission("use.furnace") && !Server::getInstance()->isOp($sender)){
+            if(!$sender->hasPermission("use.furnace") && !Server::getInstance()->isOp($sender->getName())){
                 $sender->sendMessage($prefix.$errorPermission);
             }else{
                 if (isset($this->equal[$sender->getInventory()->getItemInHand()->getId()])) {
@@ -62,6 +72,36 @@ class furnaceCMD extends Command{
                         case 129:
                             $this->burn(129, $count, $sender);
                             return;
+                        case 12:
+                            $this->burn(12, $count, $sender);
+                            return;
+                        case 4:
+                            $this->burn(4, $count, $sender);
+                            return;
+                        case 392:
+                            $this->burn(392, $count, $sender);
+                            return;
+                        case 395:
+                            $this->burn(395, $count, $sender);
+                            return;
+                        case 19:
+                            $this->burn(19, $count, $sender);
+                            return;
+                        case 319:
+                            $this->burn(319, $count, $sender);
+                            return;
+                        case 363:
+                            $this->burn(363, $count, $sender);
+                            return;
+                        case 423:
+                            $this->burn(423, $count, $sender);
+                            return;
+                        case 411:
+                            $this->burn(411, $count, $sender);
+                            return;
+                        case 349:
+                            $this->burn(349, $count, $sender);
+                            return;
                     }
                     $sender->sendMessage($prefix.$errorMessage);
                 } else {
@@ -79,7 +119,7 @@ class furnaceCMD extends Command{
             (int)$equalDamage = explode(':', $this->equal[$id])[1];
             $burnItem = ItemFactory::getInstance()->get($equalId, $equalDamage, $count);
             $sender->getInventory()->setItemInHand($burnItem);
-            $sender->sendMessage(str_replace(["{count},{item}"],[$count,$sender->getInventory()->getItemInHand()->getName()],$cfg->get("Prefix").$confirmMessage));
+            $sender->sendMessage($cfg->get("Prefix").str_replace(["{count}","{item}"],[$count,$sender->getInventory()->getItemInHand()->getName()],$confirmMessage));
         }
     }
 }

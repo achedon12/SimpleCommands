@@ -39,6 +39,13 @@ Permission:
     default: Op
     use.furnace
 
+Block can be furnace:
+
+    - all ores
+    - sand
+    - all food
+    - sponge
+
 -----------------
 
 ## Credit

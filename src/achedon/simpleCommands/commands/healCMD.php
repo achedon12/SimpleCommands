@@ -23,7 +23,7 @@ class healCMD extends Command{
         $confirmHeal = $cfg->getNested("Heal.confirm");
 
         if($sender instanceof Player){
-            if(!$sender->hasPermission("use.heal") && !Server::getInstance()->isOp($sender)){
+            if(!$sender->hasPermission("use.heal") && !Server::getInstance()->isOp($sender->getName())){
                 $sender->sendMessage($prefix.$errorPermission);
             }else{
                 if($sender->getHealth() == $sender->getMaxHealth()){

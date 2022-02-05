@@ -23,7 +23,7 @@ class feedCMD extends Command{
         $confirmFeed = $cfg->getNested("Feed.confirm");
 
        if($sender instanceof Player){
-           if(!$sender->hasPermission("use.feed") && !Server::getInstance()->isOp($sender)){
+           if(!$sender->hasPermission("use.feed") && !Server::getInstance()->isOp($sender->getName())){
                $sender->sendMessage($prefix.$errorPermission);
            }else{
                if($sender->getHungerManager()->getFood() == $sender->getHungerManager()->getMaxFood()){
