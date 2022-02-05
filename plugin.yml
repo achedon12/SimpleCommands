@@ -1,0 +1,5 @@
+name: SimpleCommands
+version: 1.0.0
+main: achedon\simpleCommands\commands
+api: [4.0.0]
+author: achedon

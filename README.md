@@ -14,14 +14,14 @@
 
 -----------------
 
-## Base configuration
+### Base configuration
 
 
     In progress
 
 -----------------
 
-## Feed
+### Feed
 
 Permission:  
 
@@ -29,7 +29,7 @@ Permission:
 
 -----------------
 
-## Heal
+### Heal
 
 Permission:
 
@@ -38,7 +38,25 @@ Permission:
 
 -----------------
 
-## Furnace
+### Invclear | enderinvclear
+
+Permission:
+
+    default: Op
+    use.clearinv
+
+-----------------
+
+### invsee | enderinvsee
+
+Permission:
+
+    default: Op
+    use.invsee
+
+-----------------
+
+### Furnace
 
 Permission:
 

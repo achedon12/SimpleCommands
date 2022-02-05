@@ -4,13 +4,9 @@ namespace achedon\simpleCommands;
 
 use achedon\simpleCommands\commands\clearEnderChestCMD;
 use achedon\simpleCommands\commands\clearinvCMD;
-use achedon\simpleCommands\commands\craftCMD;
-use achedon\simpleCommands\commands\ecCMD;
-use achedon\simpleCommands\commands\enderInvSeeCMD;
 use achedon\simpleCommands\commands\feedCMD;
 use achedon\simpleCommands\commands\furnaceCMD;
 use achedon\simpleCommands\commands\healCMD;
-use achedon\simpleCommands\commands\invseeCMD;
 use muqsit\invmenu\InvMenuHandler;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
@@ -49,6 +45,11 @@ class commands extends PluginBase implements PluginOwned{
 
         if(!InvMenuHandler::isRegistered()){
             InvMenuHandler::register($this);
+        }
+
+        if(!$this->$this->getServer()->getPluginManager()->getPlugin("InvMenu")){
+            $this->getLogger()->alert("You don't §cInvMenu§r on your server\nPlease instal them");
+            $this->getServer()->getPluginManager()->disablePlugins();
         }
     }
 
