@@ -27,7 +27,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../API/pm4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../serveur local 2/plugins/autoCrafter" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -39,7 +39,7 @@
       <option name="presentableId" value="Default" />
       <updated>1644091455064</updated>
       <workItem from="1644091456828" duration="7000" />
-      <workItem from="1645357291380" duration="147000" />
+      <workItem from="1645357291380" duration="430000" />
     </task>
     <servers />
   </component>

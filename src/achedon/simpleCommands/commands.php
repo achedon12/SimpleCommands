@@ -7,7 +7,6 @@ use achedon\simpleCommands\commands\clearinvCMD;
 use achedon\simpleCommands\commands\feedCMD;
 use achedon\simpleCommands\commands\furnaceCMD;
 use achedon\simpleCommands\commands\healCMD;
-use muqsit\invmenu\InvMenuHandler;
 use pocketmine\permission\Permission;
 use pocketmine\permission\PermissionManager;
 use pocketmine\plugin\PluginBase;
@@ -41,9 +40,6 @@ class commands extends PluginBase {
             PermissionManager::getInstance()->addPermission(new Permission($perm));
         }
 
-        if(!InvMenuHandler::isRegistered()){
-            InvMenuHandler::register($this);
-        }
     }
 
     protected function onDisable(): void{
